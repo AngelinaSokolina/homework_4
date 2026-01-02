@@ -1,5 +1,6 @@
 # Импортируем функции из модуля masks
-from src.masks import get_mask_card_number, get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
+
 
 def mask_account_card(info: str) -> str:
     """Функция, которая умеет обрабатывать информацию как о картах, так и о счетах"""
@@ -35,6 +36,7 @@ def get_date(date_string: str) -> str:
     formatted_date = f"{parts[2]}.{parts[1]}.{parts[0]}"
 
     return formatted_date
+
 
 # Проверка, чтобы запустить файлы и проверить
 if __name__ == "__main__":
