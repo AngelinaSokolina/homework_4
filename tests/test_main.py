@@ -1,4 +1,4 @@
-from src.main import divide, add_numbers, is_even, find_max, calculate_logarithm
+from src.main import divide, add_numbers, is_even, find_max, calculate_logarithm, check_age
 import pytest
 
 
@@ -24,6 +24,7 @@ def test_find_max() -> None:
     assert find_max([1, 2, 3, 4, 5]) == 5
     assert find_max([]) == 0
 
+
 def test_calc_log():
     assert calculate_logarithm(8, 2) == 3.0
     assert calculate_logarithm(8, 4) == 1.5
@@ -33,3 +34,13 @@ def test_calc_log():
 
     with pytest.raises(ValueError):
         calculate_logarithm(4, 0)
+
+# Если нужно проверить текст сообщения внутри ошибки — as exc_info обязателен.
+def test_check_age() -> None:
+    # Ловим ошибку в "контейнер" exc_info
+    with pytest.raises(ValueError) as exc_info:
+        check_age(-5)
+
+    # Залезаем внутрь этого контейнера
+    # Свойство .value — это и есть сам объект ошибки ValueError
+    assert str(exc_info.value) == "Возраст не может быть отрицательным!"

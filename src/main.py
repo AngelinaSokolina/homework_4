@@ -27,3 +27,9 @@ def divide(a: int | float, b: int | float) -> float:
 
 def calculate_logarithm(x, base):
     return math.log(x, base)
+
+
+def check_age(age: int) -> None:
+    """Функция, которая не принимает отрицательные числа"""
+    if age < 0:
+        raise ValueError("Возраст не может быть отрицательным!")
