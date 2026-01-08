@@ -1,4 +1,4 @@
-from src.main import divide, add_numbers, is_even, find_max, calculate_logarithm, check_age
+from src.main import divide, add_numbers, is_even, find_max, calculate_logarithm, check_age, reverse_string
 import pytest
 
 
@@ -44,3 +44,12 @@ def test_check_age() -> None:
     # Залезаем внутрь этого контейнера
     # Свойство .value — это и есть сам объект ошибки ValueError
     assert str(exc_info.value) == "Возраст не может быть отрицательным!"
+
+
+def test_reverse_string_numbers(numbers) -> None:
+    assert reverse_string('123') == numbers
+
+
+def test_reverse_string_letters(letters) -> None:
+    assert reverse_string('hello') == letters
+

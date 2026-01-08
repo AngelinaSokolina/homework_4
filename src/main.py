@@ -33,3 +33,7 @@ def check_age(age: int) -> None:
     """Функция, которая не принимает отрицательные числа"""
     if age < 0:
         raise ValueError("Возраст не может быть отрицательным!")
+
+
+def reverse_string(my_string: str) -> str:
+    return my_string[::-1]
