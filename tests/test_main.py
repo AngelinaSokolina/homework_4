@@ -46,10 +46,18 @@ def test_check_age() -> None:
     assert str(exc_info.value) == "Возраст не может быть отрицательным!"
 
 
-def test_reverse_string_numbers(numbers) -> None:
-    assert reverse_string('123') == numbers
+@pytest.mark.parametrize('value, expected', [
+    ('123', '321'),
+    ('hello', 'olleh'),
+    ('world', 'dlrow'),
+])
+def test_reverse_string(value, expected):
+    assert reverse_string(value) == expected
 
-
-def test_reverse_string_letters(letters) -> None:
-    assert reverse_string('hello') == letters
+# def test_reverse_string_numbers(numbers) -> None:
+#     assert reverse_string('123') == numbers
+#
+#
+# def test_reverse_string_letters(letters) -> None:
+#     assert reverse_string('hello') == letters
 
