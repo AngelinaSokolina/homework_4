@@ -1,3 +1,6 @@
+import math
+
+
 def add_numbers(a: int | float, b: int | float) -> float:
     """Сложение чисел"""
     return a + b
@@ -20,3 +23,7 @@ def divide(a: int | float, b: int | float) -> float:
     if b > 0:
         return a / b
     return 0
+
+
+def calculate_logarithm(x, base):
+    return math.log(x, base)

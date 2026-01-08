@@ -1,7 +1,5 @@
-from src.main import divide
-from src.main import add_numbers
-from src.main import is_even
-from src.main import find_max
+from src.main import divide, add_numbers, is_even, find_max, calculate_logarithm
+import pytest
 
 
 def test_divide() -> None:
@@ -25,3 +23,13 @@ def test_find_max() -> None:
     """Тестирование функции find_max"""
     assert find_max([1, 2, 3, 4, 5]) == 5
     assert find_max([]) == 0
+
+def test_calc_log():
+    assert calculate_logarithm(8, 2) == 3.0
+    assert calculate_logarithm(8, 4) == 1.5
+
+    with pytest.raises(ValueError):
+        calculate_logarithm(0, 2)
+
+    with pytest.raises(ValueError):
+        calculate_logarithm(4, 0)
